@@ -36,14 +36,6 @@ jobs:
             JAVA_VERSION: "11"
             branch: develop
             if: ${{ github.event_name == 'schedule' }}
-          - os: ubuntu-18.04
-            branch: test1
-            if: ${{ github.event_name == 'push' }}
-          - os: ubuntu-18.04
-            branch: test2
-            if: ${{ github.event_name == 'push' }}
-          - os: ubuntu-18.04
-            JAVA_VERSION: "11"
           - os: ubuntu-20.04
             JAVA_VERSION: "14"
     runs-on: ${{ matrix.os }}
