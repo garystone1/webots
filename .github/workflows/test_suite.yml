@@ -28,13 +28,19 @@ jobs:
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04]
         include:
-          - branch: master
+          - os: ubuntu-18.04
+            JAVA_VERSION: "11"
+            branch: master
             if: ${{ github.event_name == 'schedule' }}
-          - branch: develop
+          - os: ubuntu-18.04
+            JAVA_VERSION: "11"
+            branch: develop
             if: ${{ github.event_name == 'schedule' }}
-          - branch: test1
+          - os: ubuntu-18.04
+            branch: test1
             if: ${{ github.event_name == 'push' }}
-          - branch: test2
+          - os: ubuntu-18.04
+            branch: test2
             if: ${{ github.event_name == 'push' }}
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
