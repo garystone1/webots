@@ -32,6 +32,10 @@ jobs:
             if: ${{ github.event_name == 'schedule' }}
           - branch: develop
             if: ${{ github.event_name == 'schedule' }}
+          - branch: test1
+            if: ${{ github.event_name == 'push' }}
+          - branch: test2
+            if: ${{ github.event_name == 'push' }}
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
           - os: ubuntu-20.04
