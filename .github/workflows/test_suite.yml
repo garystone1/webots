@@ -26,9 +26,6 @@ jobs:
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04]
         TEST_BRANCH: [master, develop]
-        exclude:
-          - os: ubuntu-20.04
-            TEST_BRANCH: master
         include:
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
