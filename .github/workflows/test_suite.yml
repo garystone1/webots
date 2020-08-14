@@ -25,16 +25,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04]
-        branch: [master, develop]
+        TEST_BRANCH: [master, develop]
         exclude:
           - os: ubuntu-20.04
-            branch: master
+            TEST_BRANCH: master
         include:
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
           - os: ubuntu-20.04
             JAVA_VERSION: "14"
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.TEST_BRANCH }}
     steps:
     - uses: actions/checkout@v2
       with:
