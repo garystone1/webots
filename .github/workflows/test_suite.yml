@@ -27,12 +27,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04]
-        branch: [master]
         include:
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
             branch: develop
-            if: ${{ github.event_name == 'push' }}
+          - os: ubuntu-18.04
+            JAVA_VERSION: "11"
+            branch: master
           - os: ubuntu-20.04
             JAVA_VERSION: "14"
     runs-on: ${{ matrix.os }}
