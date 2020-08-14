@@ -30,12 +30,13 @@ jobs:
         include:
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
-            branch: develop
+            TEST_BRANCH: develop
           - os: ubuntu-18.04
             JAVA_VERSION: "11"
-            branch: master
+            TEST_BRANCH: master
           - os: ubuntu-20.04
             JAVA_VERSION: "14"
+            TEST_BRANCH: test
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -43,7 +44,7 @@ jobs:
          submodules: true
     - name: Install Webots Compilation Dependencies
       run: |
-        echo ${{ matrix.branch }}
+        echo ${{ matrix.TEST_BRANCH }}
         scripts/install/linux_optional_compilation_dependencies.sh
     - name: Set Commit SHA in Version
       if: ${{ github.event_name == 'schedule' }}
